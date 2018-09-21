@@ -1,2 +1,42 @@
 # Virtual Pet Shelter
 
+Shelter will contain up to 4 pets of user generation and will give the user options to Feed (all, single), Water (all, single), Play (all, single), Take to Doctor (single), Adopt (remove pet from shelter), Admit (add new pet to shelter), and Quit. All pets will have individualized stats that are affected by user actions. All pets will have a status description based on "invisible" buff/debuff stats.
+
+-Stats-
+	-Visible
+		-Hunger (0-100)
+			-decreased by feeding (based on food type), increased by time (10/tick) and playing (based on play type)
+		-Thirst (0-100)
+			-decreased by watering (based on food type), increased by time (10/tick) and playing (based on play type)
+		-Boredom (0-100)
+			-decreased by playing (based on play type), increased by time (10/tick)
+		-Health (0-100)
+			-decreased by amount related to current debuff
+	-Invisible
+		-Jealousy
+			-
+	-Debuffs - based on highest stat level
+		-Peckish/Starving
+			-Peckish = Hunger above 30
+				-Description - "[petName] looks like they could really murder a curry!"
+				-Decreases Health by 5
+			-Starving = Hunger above 60
+				-Description - "[petName] looks like they are mostly bones!"
+				-Decreases Health by 10			
+		-Thirsty/Parched
+			-Thirsty = Thirst above 30
+				-Description - "[petName] is no longer optimally hydrated."
+				-Decreases Health by 5
+			-Parched = Thirst above 60
+				-Description - "[petName] is thirsty! Oh my God!"
+				-Decreases Health by 10
+		-Bored/StirCrazy
+			-Bored = Boredom above 30
+				-Description - "[petName] is twiddling their thumbs."
+				-Decreases Health by 5
+			-StirCrazy = Boredom above 60
+				-Description - "[petName] is bouncing off the walls!"
+				-Decreases Health by 10
+-Actions-
+	-Feed
+		-Option to Feed single pet
