@@ -12,7 +12,8 @@ public class VirtualPetShelter {
 	public String newPetName;
 	public String newPetDescription;
 
-	VirtualPet pet = new VirtualPet(newPetName, newPetDescription, 45, 30, 15, 100);
+	// VirtualPet pet = new VirtualPet(newPetName, newPetDescription, 45, 30, 15,
+	// 100);
 
 	Map<String, VirtualPet> shelter = new HashMap<String, VirtualPet>();
 
@@ -29,9 +30,9 @@ public class VirtualPetShelter {
 	}
 
 	public void addNewPet(VirtualPet petToAdd) {
-		String newPetName = pet.getPetName();
-		shelter.put(newPetName, pet);
-		System.out.println(petsInShelter());
+		this.newPetName = petToAdd.getPetName();
+		this.newPetDescription = petToAdd.getPetDescription();
+		shelter.put(newPetName, petToAdd);
 
 	}
 
@@ -55,14 +56,23 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public void playWithPet(String petToPlay, int playType) {
+	public void playWithPet(VirtualPet petToPlay, int playType) {
 		shelter.get(petToPlay);
-		pet.play(playType);
+		petToPlay.play(playType);
 	}
 
 	public void tickAllPets() {
 		for (Entry<String, VirtualPet> entry : shelter.entrySet()) {
 			entry.getValue().tick();
+		}
+
+	}
+
+	public void displayPets() {
+		for (Entry<String, VirtualPet> entry : shelter.entrySet()) {
+			System.out.println("|" + entry.getKey() + "|" + entry.getValue().getPetDescription() + "|"
+					+ entry.getValue().getPetHunger() + "|" + entry.getValue().getPetThirst() + "|"
+					+ entry.getValue().getPetBoredom() + "|" + entry.getValue().getPetHealth() + "|");
 		}
 	}
 

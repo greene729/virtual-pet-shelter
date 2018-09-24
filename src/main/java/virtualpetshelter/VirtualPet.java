@@ -10,6 +10,21 @@ public class VirtualPet {
 	public int petHealth;
 	public int damage;
 
+	public VirtualPet(String name, String description) {
+		this.petName = name;
+		this.petDescription = description;
+
+	}
+
+	public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int health) {
+		this.petName = name;
+		this.petDescription = description;
+		this.petHunger = hunger;
+		this.petThirst = thirst;
+		this.petBoredom = boredom;
+		this.petHealth = health;
+	}
+
 	public String getPetName() {
 		return petName;
 	}
@@ -32,20 +47,6 @@ public class VirtualPet {
 
 	public int getPetHealth() {
 		return petHealth;
-	}
-
-	public VirtualPet(String name, String description) {
-		this.petName = name;
-		this.petDescription = description;
-
-	}
-
-	public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int health) {
-		this.petHunger = hunger;
-		this.petThirst = thirst;
-		this.petBoredom = boredom;
-		this.petHealth = health;
-
 	}
 
 	public void feed(int foodType) {
