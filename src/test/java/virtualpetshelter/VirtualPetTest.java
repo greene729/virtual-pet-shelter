@@ -4,95 +4,95 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class VirtualPetSTest {
+public class VirtualPetTest {
 
 	@Test
 	public void shouldHaveName() {
-		VirtualPetS underTest = new VirtualPetS("Handsy", "blueish");
+		VirtualPet underTest = new VirtualPet("Handsy", "blueish");
 		String name = underTest.petName;
 		assertEquals("Handsy", name);
 	}
 
 	@Test
 	public void shouldGetName() {
-		VirtualPetS underTest = new VirtualPetS("Schwarma", "having a time");
+		VirtualPet underTest = new VirtualPet("Schwarma", "having a time");
 		String name = underTest.getPetName();
 		assertEquals("Schwarma", name);
 	}
 
 	@Test
 	public void shouldHaveDescription() {
-		VirtualPetS underTest = new VirtualPetS("Travis", "rarin' to go");
+		VirtualPet underTest = new VirtualPet("Travis", "rarin' to go");
 		String description = underTest.petDescription;
 		assertEquals("rarin' to go", description);
 	}
 
 	@Test
 	public void shouldGetDescription() {
-		VirtualPetS underTest = new VirtualPetS("Glooper", "white gold");
+		VirtualPet underTest = new VirtualPet("Glooper", "white gold");
 		String description = underTest.getPetDescription();
 		assertEquals("white gold", description);
 	}
 
 	@Test
 	public void shouldHaveHunger() {
-		VirtualPetS underTest = new VirtualPetS("Genny", "up to 11", 100, 10, 1, 4);
+		VirtualPet underTest = new VirtualPet("Genny", "up to 11", 100, 10, 1, 4);
 		int hunger = underTest.petHunger;
 		assertEquals(100, hunger);
 	}
 
 	@Test
 	public void shouldGetHunger() {
-		VirtualPetS underTest = new VirtualPetS("Glorbis", "pleasingly round", 80, 10, 1, 4);
-		int hunger = underTest.getHunger();
+		VirtualPet underTest = new VirtualPet("Glorbis", "pleasingly round", 80, 10, 1, 4);
+		int hunger = underTest.getPetHunger();
 		assertEquals(80, hunger);
 	}
 
 	@Test
 	public void shouldHaveThirst() {
-		VirtualPetS underTest = new VirtualPetS("Anton", "tubular", 10, 80, 1, 4);
+		VirtualPet underTest = new VirtualPet("Anton", "tubular", 10, 80, 1, 4);
 		int thirst = underTest.petThirst;
 		assertEquals(80, thirst);
 	}
 
 	@Test
 	public void shouldGetThirst() {
-		VirtualPetS underTest = new VirtualPetS("Vincent", "a bit lost", 1, 50, 1, 4);
+		VirtualPet underTest = new VirtualPet("Vincent", "a bit lost", 1, 50, 1, 4);
 		int thirst = underTest.getPetThirst();
 		assertEquals(50, thirst);
 	}
 
 	@Test
 	public void shouldHaveBoredom() {
-		VirtualPetS underTest = new VirtualPetS("Slag", "slaggy", 1, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("Slag", "slaggy", 1, 2, 3, 4);
 		int boredom = underTest.petBoredom;
 		assertEquals(3, boredom);
 	}
 
 	@Test
 	public void shouldGetBoredom() {
-		VirtualPetS underTest = new VirtualPetS("Mud", "brown", 1, 2, 3, 4);
-		int boredom = underTest.getBoredom();
+		VirtualPet underTest = new VirtualPet("Mud", "brown", 1, 2, 3, 4);
+		int boredom = underTest.getPetBoredom();
 		assertEquals(3, boredom);
 	}
 
 	@Test
 	public void shouldHaveHealth() {
-		VirtualPetS underTest = new VirtualPetS("Gangy", "shriveled", 1, 2, 3, 5);
+		VirtualPet underTest = new VirtualPet("Gangy", "shriveled", 1, 2, 3, 5);
 		int health = underTest.petHealth;
 		assertEquals(5, health);
 	}
 
 	@Test
 	public void shouldGetHealth() {
-		VirtualPetS underTest = new VirtualPetS("David", "missing", 1, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("David", "missing", 1, 2, 3, 4);
 		int health = underTest.getPetHealth();
 		assertEquals(4, health);
 	}
 
 	@Test
 	public void shouldFeedTypeOne() {
-		VirtualPetS underTest = new VirtualPetS("Trevor", "hungry", 50, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("Trevor", "hungry", 50, 2, 3, 4);
 		underTest.feed(1);
 		int hunger = underTest.petHunger;
 		assertEquals(35, hunger);
@@ -100,7 +100,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAffectThirstWhenFedTypeOne() {
-		VirtualPetS underTest = new VirtualPetS("Dan", "vaguely human", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("Dan", "vaguely human", 1, 50, 3, 4);
 		underTest.feed(1);
 		int thirst = underTest.petThirst;
 		assertEquals(40, thirst);
@@ -108,7 +108,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldFeedTypeTwo() {
-		VirtualPetS underTest = new VirtualPetS("Trevor", "hungry", 50, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("Trevor", "hungry", 50, 2, 3, 4);
 		underTest.feed(2);
 		int hunger = underTest.petHunger;
 		assertEquals(20, hunger);
@@ -116,7 +116,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAffectThirstWhenFedTypeTwo() {
-		VirtualPetS underTest = new VirtualPetS("Dan", "vaguely human", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("Dan", "vaguely human", 1, 50, 3, 4);
 		underTest.feed(2);
 		int thirst = underTest.petThirst;
 		assertEquals(55, thirst);
@@ -124,7 +124,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldFeedTypeThree() {
-		VirtualPetS underTest = new VirtualPetS("Trevor", "hungry", 50, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("Trevor", "hungry", 50, 2, 3, 4);
 		underTest.feed(3);
 		int hunger = underTest.petHunger;
 		assertEquals(5, hunger);
@@ -132,7 +132,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAffectThirstWhenFedTypeThree() {
-		VirtualPetS underTest = new VirtualPetS("Dan", "vaguely human", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("Dan", "vaguely human", 1, 50, 3, 4);
 		underTest.feed(3);
 		int thirst = underTest.petThirst;
 		assertEquals(65, thirst);
@@ -140,7 +140,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldWaterTypeOne() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 50, 3, 4);
 		underTest.water(1);
 		int thirst = underTest.petThirst;
 		assertEquals(35, thirst);
@@ -148,7 +148,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldWaterTypeTwo() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 50, 3, 4);
 		underTest.water(2);
 		int thirst = underTest.petThirst;
 		assertEquals(20, thirst);
@@ -156,7 +156,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAffectHungerWhenFedTypeThree() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 50, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 2, 3, 4);
 		underTest.water(2);
 		int hunger = underTest.petHunger;
 		assertEquals(45, hunger);
@@ -164,7 +164,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldWaterTypeThree() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 50, 3, 4);
 		underTest.water(3);
 		int thirst = underTest.petThirst;
 		assertEquals(5, thirst);
@@ -172,7 +172,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldPlayTypeOne() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 2, 50, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 2, 50, 4);
 		underTest.play(1);
 		int boredom = underTest.petBoredom;
 		assertEquals(35, boredom);
@@ -181,7 +181,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldPlayTypeTwo() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 2, 50, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 2, 50, 4);
 		underTest.play(2);
 		int boredom = underTest.petBoredom;
 		assertEquals(20, boredom);
@@ -190,7 +190,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAlsoAffectHungerWhenPlayTypeTwo() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 50, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 2, 3, 4);
 		underTest.play(2);
 		int hunger = underTest.petHunger;
 		assertEquals(55, hunger);
@@ -199,7 +199,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAlsoAffectThirstWhenPlayTypeTwo() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 50, 3, 4);
 		underTest.play(2);
 		int thirst = underTest.petThirst;
 		assertEquals(55, thirst);
@@ -208,7 +208,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldPlayTypeThree() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 2, 50, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 2, 50, 4);
 		underTest.play(3);
 		int boredom = underTest.petBoredom;
 		assertEquals(5, boredom);
@@ -217,7 +217,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAlsoAffectHungerWhenPlayTypeThree() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 50, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 50, 2, 3, 4);
 		underTest.play(3);
 		int hunger = underTest.petHunger;
 		assertEquals(60, hunger);
@@ -226,7 +226,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldAlsoAffectThirstWhenPlayTypeThree() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 50, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 50, 3, 4);
 		underTest.play(3);
 		int thirst = underTest.petThirst;
 		assertEquals(60, thirst);
@@ -235,7 +235,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldCollectHungerDamage() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 100, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 100, 2, 3, 4);
 		underTest.collectDamage();
 		int damage = underTest.damage;
 		assertEquals(10, damage);
@@ -243,7 +243,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldCollectThirstDamage() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 100, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 100, 3, 4);
 		underTest.collectDamage();
 		int damage = underTest.damage;
 		assertEquals(10, damage);
@@ -251,7 +251,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldCollectBoredomDamage() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 2, 100, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 2, 100, 4);
 		underTest.collectDamage();
 		int damage = underTest.damage;
 		assertEquals(10, damage);
@@ -259,7 +259,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldCollectMultipleDamage() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 100, 100, 100, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 100, 100, 100, 4);
 		underTest.collectDamage();
 		int damage = underTest.damage;
 		assertEquals(30, damage);
@@ -267,7 +267,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldApplyDamage() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 100, 100, 100, 100);
+		VirtualPet underTest = new VirtualPet("name", "description", 100, 100, 100, 100);
 		underTest.collectDamage();
 		underTest.applyDamage();
 		int health = underTest.petHealth;
@@ -276,7 +276,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldTickHunger() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 2, 3, 4);
 		underTest.tick();
 		int hunger = underTest.petHunger;
 		assertEquals(11, hunger);
@@ -284,7 +284,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldTickThirst() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 2, 3, 4);
 		underTest.tick();
 		int thirst = underTest.petThirst;
 		assertEquals(12, thirst);
@@ -292,7 +292,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldTickBoredom() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 1, 2, 3, 4);
+		VirtualPet underTest = new VirtualPet("name", "description", 1, 2, 3, 4);
 		underTest.tick();
 		int boredom = underTest.petBoredom;
 		assertEquals(13, boredom);
@@ -300,7 +300,7 @@ public class VirtualPetSTest {
 
 	@Test
 	public void shouldTickHealth() {
-		VirtualPetS underTest = new VirtualPetS("name", "description", 100, 2, 3, 100);
+		VirtualPet underTest = new VirtualPet("name", "description", 100, 2, 3, 100);
 		underTest.tick();
 		int health = underTest.petHealth;
 		assertEquals(90, health);
