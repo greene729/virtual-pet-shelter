@@ -56,9 +56,9 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public void playWithPet(VirtualPet petToPlay, int playType) {
-		shelter.get(petToPlay);
-		petToPlay.play(playType);
+	public void playWithPet(String petToPlay, int playType) {
+		VirtualPet playingPet = shelter.get(petToPlay);
+		playingPet.play(playType);
 	}
 
 	public void tickAllPets() {
