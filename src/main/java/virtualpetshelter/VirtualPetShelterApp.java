@@ -94,7 +94,7 @@ public class VirtualPetShelterApp {
 				System.out.println("2 - Take the...thing for a brisk walk");
 				System.out.println("3 - Sports? Do a sports or something?");
 				int playType = input.nextInt();
-				newShelter.playWithPet(newShelter.shelter.get(petToPlay), playType);
+				newShelter.playWithPet(petToPlay, playType);
 				newShelter.tickAllPets();
 				break;
 			case "4":
