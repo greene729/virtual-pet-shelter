@@ -7,14 +7,15 @@ Shelter will contain up to 4 pets of user generation and will give the user opti
 		-Hunger (0-100)
 			-decreased by feeding (based on food type), increased by time (10/tick) and playing (based on play type)
 		-Thirst (0-100)
-			-decreased by watering (based on food type), increased by time (10/tick) and playing (based on play type)
+			-decreased by watering (based on food type), increased by time (5/tick) and playing (based on play type)
 		-Boredom (0-100)
-			-decreased by playing (based on play type), increased by time (10/tick)
+			-decreased by playing (based on play type), increased by time (15/tick)
 		-Health (0-100)
 			-decreased by amount related to current debuff
 	-Invisible
-		-Jealousy
-			-
+		-Jealousy (1-10)
+			-increased by individual action toward other pet
+			-at 10 jealousy, pet will lash out at pet with lowest jealousy stat, dealing 1-20 damage (random)
 	-Debuffs - based on highest stat level
 		-Peckish/Starving
 			-Peckish = Hunger above 30
@@ -30,13 +31,45 @@ Shelter will contain up to 4 pets of user generation and will give the user opti
 			-Parched = Thirst above 60
 				-Description - "[petName] is thirsty! Oh my God!"
 				-Decreases Health by 10
-		-Bored/StirCrazy
+		-Bored/StirCrazy/LooseSeal
 			-Bored = Boredom above 30
 				-Description - "[petName] is twiddling their thumbs."
 				-Decreases Health by 5
 			-StirCrazy = Boredom above 60
 				-Description - "[petName] is bouncing off the walls!"
 				-Decreases Health by 10
+			-LooseSeal = Boredom above 90
+				-Description "[petName] has gone berzerk!"
+				-Decreases Health by 15
+				-Decreases Health of other pets by 5
 -Actions-
+	-All actions cause normal tick.
 	-Feed
-		-Option to Feed single pet
+		-Single pet
+			-Reduces hunger of specific pet and adjusts other stats based on specs of food type
+			-Increases jealousy of other pets by 1
+		-All pets
+			-Reduces hunger of all pets and adjusts other stats based on food type
+			-Decrease jealousy of all pets by 1
+		-Food types
+			-Fruit
+				-Hunger -15, Thirst -10
+			-Side
+				-Hunger -30, Thirst +5
+			-Meal
+				-hunger -45, Thirst +15
+	-Water
+		-Single pet
+			-Reduces thirst of specific pet and adjusts other stats based on specs of food type
+			-Increases jealousy of other pets by 2
+		-All pets
+			-Reduces hunger of all pets and adjusts other stats based on food type
+			-Decrease jealousy of all pets by 1
+	-Play
+		-Single pet
+			-Reduces boredom of specific pet and adjusts other stats based on specs of play type
+			-Increases jealousy of other pets by 3
+		-All pets
+			-Reduces boredom of all pets and adjusts other stats based on food type
+			-Decrease jealousy of all pets by 1
+
